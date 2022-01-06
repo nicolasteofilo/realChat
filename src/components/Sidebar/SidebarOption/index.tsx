@@ -2,6 +2,8 @@ import React from "react";
 import { SidebarOptionsContainer, SidebarOptionChannel } from "./styles";
 import "reactjs-popup/dist/index.css";
 import { db } from '../../../firabase'
+import { useDispatch } from "react-redux";
+import { ENTER_ROOM } from "../../../features/appSlice";
 
 interface SibebarOptionProps {
     Icon?: React.ComponentType<any>;
@@ -10,7 +12,9 @@ interface SibebarOptionProps {
     id?: string;
 }
 
-function SibebarOption({ Icon, title, addChanelOption = false }: SibebarOptionProps) {
+function SibebarOption({ Icon, title, addChanelOption = false, id }: SibebarOptionProps) {
+    const dispatch = useDispatch();
+
     function addChannel() {
         const channelName = prompt("Insira o nome do canal");
         if (channelName) {
@@ -21,7 +25,11 @@ function SibebarOption({ Icon, title, addChanelOption = false }: SibebarOptionPr
     }
 
     function selectChannel() {
-        prompt("Selecionar canal");
+        if(id) {
+            dispatch(ENTER_ROOM({
+                roomId: id,
+            }))
+        }
     }
 
     return (
