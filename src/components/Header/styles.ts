@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: var(--slack-color);
+  border-bottom: 2px solid #8080803f;
 `;
 
 export const Headerleft = styled.div`
@@ -26,7 +27,6 @@ export const Headerleft = styled.div`
 
 export const HeaderSearch = styled.div`
   display: flex;
-  background-color: var(--input-color);
 	height: 100%;
 	line-height: 100%;
 	align-items: center;
