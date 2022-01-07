@@ -24,8 +24,6 @@ This is a real-time slack-inspired chat app made with firebase!
 
 ## Demo
 
-Insert gif or link to demo
-
 Demo application: https://slack-clone-61211.web.app/
 
 ## Installation
