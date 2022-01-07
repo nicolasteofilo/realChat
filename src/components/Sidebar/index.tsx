@@ -21,9 +21,12 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../../firabase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firabase";
 
 function Sidebar() {
     const [channels, loading, error] = useCollection(db.collection("rooms"))
+    const [user] = useAuthState(auth);
 
     console.log(channels, loading, error)
     return (
@@ -36,7 +39,7 @@ function Sidebar() {
                     </h2>
                     <h3>
                         <BsRecordFill color="#2bac76" />
-                        Nicolas Teófilo
+                        {user?.displayName}
                     </h3>
                 </SidebarInfo>
                 <CreateIcons color="#fff" size={20} />

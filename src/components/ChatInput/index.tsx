@@ -2,17 +2,19 @@
 import React, { useState } from "react";
 import { ChatInputContainer } from "./styles";
 import { Button } from "@material-ui/core";
-import { db } from "../../firabase";
+import { auth, db } from "../../firabase";
 import firabase from "firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 interface ChatInputProps {
     channelId?: string;
     channelName?: string;
+    chatRef?: any;
 }
 
-function ChatInput({ channelId, channelName }: ChatInputProps) {
+function ChatInput({ channelId, channelName, chatRef }: ChatInputProps) {
     const [message, setMessage] = useState("");
-    console.log(channelId);
+    const [user] = useAuthState(auth);
 
     const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -23,9 +25,12 @@ function ChatInput({ channelId, channelName }: ChatInputProps) {
         db.collection("rooms").doc(channelId).collection("messages").add({
             message: message,
             timestamp: firabase.firestore.FieldValue.serverTimestamp(),
-            user: "Nicolas Teófilo",
-            userImage: "https://avatars.githubusercontent.com/u/81480818?v=4"
+            user: user?.displayName,
+            userImage: user?.photoURL,
         });
+
+        chatRef?.current.scrollIntoView({ behavior: "smooth" });
+
         setMessage("");
     };
 
