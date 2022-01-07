@@ -1,4 +1,6 @@
 import React from 'react';
+import { Header } from './components/Header';
+import Sidebar from './components/Sidebar';
 import { Routes } from './routes';
 
 import { AppBody } from './styles/App.styles';
@@ -9,6 +11,8 @@ function App() {
     <>
       <AppBody>
         <GlobalStyle />
+        <Header />
+        <Sidebar />
         <Routes />
       </AppBody>
     </>
