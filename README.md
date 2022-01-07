@@ -1,45 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Available Scripts
+# Chat Application
 
-In the project directory, you can run:
+This is a real-time slack-inspired chat app made with firebase!
 
-### `yarn start`
+## Tech Stack
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Client:** React, Redux, Styled Components
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Server:** Firebase ( database and auth )
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `yarn build`
+- Sign in with Google
+- Add chat channel
+- Send messages on a specific channel
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Login Page](/images/image-001.png)
+![Home Page](/images/image-002.png)
 
-### `yarn eject`
+## Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Insert gif or link to demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Demo application: https://slack-clone-61211.web.app/
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Install chat-application!
 
-## Learn More
+```bash
+git clone git@github.com:nicolasteofilo/chat-application.git
+```
+```bash
+cd my-chat-application
+```
+```bash
+yarn or npm
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+yarn start
+``` 
+## Authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# chat-application
+- [@nicolasteofilo](https://www.github.com/nicolasteofilo)
+
